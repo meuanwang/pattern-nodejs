@@ -1,12 +1,12 @@
 "use strict";
 
-const { Router } = require("express");
-const router = Router();
+const express = require("express");
+const router = express.Router();
+const registrationRouter = require('./registration.router')
+const parkslotRouter = require('./parkslot.router')
 
-router.get("/", function(request, response) {
-    response.json({
-        info : "Hi there!"
-    })
-});
+router.use('/registration',registrationRouter)
+router.use('/parkslot',parkslotRouter)
+
 
 module.exports = router;
