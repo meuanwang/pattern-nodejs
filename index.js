@@ -5,5 +5,7 @@ const Logger    = require("./lib/logger") ;
 let logger = new Logger();
 let server = new Server(express,logger);
 
+server.initApp();
 server.initRoutes();
+server.initDatabase();
 server.run();
